@@ -1,10 +1,13 @@
 // DANIEL IRALA MIDTERM_DanielI
 // Lovebird
 // Press SPACEBAR to see a fun fact.
-// Press X to change the background color randomly
+// Press X to change the background randomly
 
 let fact;
 let img;
+let img2;
+let img3;
+let img4;
 let myFont;
 let x;
 let y;
@@ -19,22 +22,22 @@ let state;
 
 //Have a picture of a Lovebird move across the canvas with some text appear 
 function preload() {
-  img = loadImage('Image/lovebird.png');
-  //img2 = loadImage ('Image/')
-  //img3 = loadImage
-  //img4 = loadImage
+  img = loadImage('Image/lovebird1.png');
+  img2 = loadImage ('Image/habitat.jpg');
+  img3 = loadImage ('Image/tree.jpg');
+  img4 = loadImage ('Image/sky.jpg');
   //myFont = loadFont (myfont)
 }
 
 
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(1000, 1000);
   x = 0;
   y = 0;
   fontX = 0;
   fontY = 0;
   fact = '';
-  //images = [img1, img2, img3]; //Placeholder for background images 
+  images = [img, img2, img3, img4]; //Placeholder for background images 
   state = 1 
 }
 
@@ -51,32 +54,46 @@ function draw() {
   }
 }
 function stage2(){
-  background ("red");
+  background (img2);
+  textSize (30);
+  textFont ("Impact");
+  fill ("black");
+  text("Press Spacebar to learn a bird fact", 600, 300, 150, 150);
+  textFont ("Times New Roman")
+  fill ("white")
+   text(fact, 50, 150);
 }
 function stage3(){
-  background ("blue")
+  background (img3);
+  textSize (30);
+  textFont ("Impact");
+  fill ("black");
+  text("Press Spacebar to learn a bird fact", 600, 300, 150, 150);
+  textFont ("Times New Roman")
+  fill ("white")
+   text(fact, 50, 150);
 }
 function stage1(){
   //background(background);
   background (220);
-  imageMode (CENTER);
+  //imageMode (CENTER);
   ms = millis ();  
 
 
   //Bottom floor is grass
   noStroke();
   fill("green")
-  rect (0, 500, 600, 100);
+  rect (0, 500, 1000, 100);
 
   //Tree
   fill ("brown");
-  rect (450, 390, 25, 110);
+  rect (750, 390, 25, 110);
 
   //Leaves
   fill ("darkgreen");
-  circle (460, 350, 80);
-  circle (430, 370, 60);
-  circle (490, 370, 60);
+  circle (760, 350, 80);
+  circle (730, 370, 60);
+  circle (790, 370, 60);
   
 
   // image() draws the img with x, y coordinate, & width + height
@@ -84,12 +101,13 @@ function stage1(){
   textFont ("Impact");
   fill ("black");
   
-  if (ms / 1000 > 3) {
+  //if (ms / 1000 > 3) {
     image(img, x, y, 200, 200);
-  }
+  //}
 
-  text("Press Spacebar to learn a bird fact", 300, 300, 150, 150);
-   text(fact, 200, 150);
+  text("Press Spacebar to learn a bird fact", 600, 300, 150, 150);
+  textFont ("Times New Roman")
+   text(fact, 50, 150);
 
   fontX++;
   fontY++;
@@ -102,19 +120,26 @@ function stage1(){
 function keyPressed(){
   if (key ===' '){
     print("Spacebar pressed")
-    fact= "lovebird fact work in progress"
+    if (state === 1)
+      fact= " Lovebirds are native to mainland Africa and the island of Madagascar "
+    if (state === 2)
+      fact= " Lovebirds fact 2 insert later"
+    if (state === 3)
+      fact= "Lovebirds fact 3 insert later"
     textSize (30);
   textFont ("Impact");
   fill ("black");
-    text (" lovebird fact work in progress",200, 150);
+    text (fact,50, 150);
     //x,y, width, height
   }
-  if (key === 'x'){
-    //background = images [random(2)]
+  if (key === 'r'){
+    state = 1
+    fact = ""
   }
 }
 function mousePressed(){
   state= state+1
+  fact = ""
 }
 
-  //Press X to change background to a random
+  //Press X to change background to a random background
