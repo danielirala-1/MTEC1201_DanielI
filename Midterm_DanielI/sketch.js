@@ -1,7 +1,7 @@
 // DANIEL IRALA MIDTERM_DanielI
 // Lovebird
-// Press SPACEBAR to see a fun fact.
-// Press X to change the background randomly
+// Press SPACEBAR to see a fun fact. Click screen to change to the next page
+
 
 let fact;
 let img;
@@ -56,20 +56,20 @@ function draw() {
 function stage2(){
   background (img2);
   textSize (30);
-  textFont ("Impact");
+  textFont ("Arial");
   fill ("black");
-  text("Press Spacebar to learn a bird fact", 600, 300, 150, 150);
-  textFont ("Times New Roman")
+  text("Press Spacebar to learn a bird fact. Click screen to change page", 600, 300, 150, 150);
+  textFont ("Arial")
   fill ("white")
    text(fact, 50, 150);
 }
 function stage3(){
   background (img3);
   textSize (30);
-  textFont ("Impact");
-  fill ("black");
-  text("Press Spacebar to learn a bird fact", 600, 300, 150, 150);
-  textFont ("Times New Roman")
+  textFont ("Arial");
+  fill ("white");
+  text("Press Spacebar to learn a bird fact. Click screen to change page", 600, 300, 150, 150);
+  textFont ("Arial")
   fill ("white")
    text(fact, 50, 150);
 }
@@ -105,8 +105,8 @@ function stage1(){
     image(img, x, y, 200, 200);
   //}
 
-  text("Press Spacebar to learn a bird fact", 600, 300, 150, 150);
-  textFont ("Times New Roman")
+  text("Press Spacebar to learn a bird fact. Click screen to move to the next page", 600, 300, 150, 150);
+  textFont ("Arial")
    text(fact, 50, 150);
 
   fontX++;
@@ -123,12 +123,12 @@ function keyPressed(){
     if (state === 1)
       fact= " Lovebirds are native to mainland Africa and the island of Madagascar "
     if (state === 2)
-      fact= " Lovebirds fact 2 insert later"
+      fact= " Lovebirds in the wild make their home out of tree holes"
     if (state === 3)
-      fact= "Lovebirds fact 3 insert later"
+      fact= "Lovebirds are high energy, curious birds that need a lot of attention"
     textSize (30);
-  textFont ("Impact");
-  fill ("black");
+  textFont ("Arial");
+  fill ("blue");
     text (fact,50, 150);
     //x,y, width, height
   }
@@ -142,4 +142,4 @@ function mousePressed(){
   fact = ""
 }
 
-  //Press X to change background to a random background
+  
